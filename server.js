@@ -15,3 +15,4 @@ app.get("/latest", (req, res) => { if (!fs.existsSync(LATEST_FILE)) return res.j
 app.get("/history", (req, res) => { const files = fs.readdirSync(DATA_DIR).filter(f => f !== "latest.json" && f.endsWith(".json")).sort().reverse(); res.json(files); });
 app.get("/history/:filename", (req, res) => { const file = path.join(DATA_DIR, req.params.filename); if (!fs.existsSync(file)) return res.status(404).json({ error: "Not found" }); res.json(JSON.parse(fs.readFileSync(file, "utf-8"))); });
 app.listen(PORT, () => console.log(`[✓] CCTV Backend running on port ${PORT}`));
+// force Sat Mar 14 05:23:16 PM UTC 2026
