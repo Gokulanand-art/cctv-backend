@@ -3,7 +3,7 @@ const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 const DATA_DIR = path.join(__dirname, "data");
 const LATEST_FILE = path.join(DATA_DIR, "latest.json");
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR);
